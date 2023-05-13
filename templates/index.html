@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/null.css">
+    <link rel="stylesheet" href="static/css/swiper.css">
+    <link rel="stylesheet" href="static/css/style.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="background">
+        <section class="transperent">
+            <div class="container">
+                <header>
+                    <div class="top-contacts">
+                        <div class="media-links">
+                            <a href="#"><img src="static/imgs/icons/telegram.png" alt=""></a>
+                            <a href="#"><img src="static/imgs/icons/whatsapp.png" alt=""></a>
+                            <a href="#"><img src="static/imgs/icons/viber.png" alt=""></a>
+                        </div>
+                        <div class="contacts ">
+                            <p>+996555093265</p>
+                            <p>intorgasia@gmail.com</p>
+                        </div>
+                    </div>
+                    <!-- <hr class="header-line"> -->
+                    <nav class="navbar">
+                      <div class="navbar-toggle">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                      </div>
+                      <ul class="navbar-menu">
+                        <li class="has-submenu">
+                          <a href="#services" class="triangle">СЕРТИФИКАЦИЯ / ЧЕСТНЫЙ ЗНАК</a>
+<!--                          <ul>-->
+<!--                            <li><a href="#about_us">О нас</a></li>-->
+<!--                            <li><a href="#blogers">Блогеры о нас</a></li>-->
+<!--                              <li><a href="#services">Наши услуги</a></li>-->
+<!--                          </ul>-->
+                        </li>
+                        <li class="has-submenu">
+                          <a href="#fulfilment" class="triangle">ФУЛФИЛМЕНТ</a>
+<!--                          <ul>-->
+<!--                            <li><a href="#fulfilment">Фулфилмент</a></li>-->
+<!--                              <li><a href="#advantages">Наши преимущества</a></li>-->
+<!--                              <li><a href="#review">Видео о работе фулфилмента</a></li>-->
+<!--                              <li><a href="#fulfilment_services">Услуги фулфилмента</a></li>-->
+<!--                          </ul>-->
+                        </li>
+<!--                        <li class="has-submenu">-->
+<!--                          <a href="#" class="triangle">УСЛУГИ БАЕРА</a>-->
+<!--                          <ul>-->
+<!--                            <li><a href="#">Логистика</a></li>-->
+<!--                            <li><a href="#">Таможенное оформление</a></li>-->
+<!--                          </ul>-->
+<!--                        </li>-->
+                        <li><a href="{{ url_for('calculator') }}">ОНЛАЙН КАЛЬКУЛЯТОР</a></li>
+                        <li><a href="#contacts">КОНТАКТЫ</a></li>
+                      </ul>
+                    </nav>
+                    
+                </header>
+                <div class="logo">
+                    <img src="static/imgs/icons/logo.png" alt="">
+                </div>
+                <div class="title">
+                    <h1>Полное сопровождение экспорта продукции из Кыргызстана</h1>
+                    <p>Мы берем на себя все процессы селлеров  от сертификации Вашего товара  до доставки его на ваши склады или склады маркетплейсов.</p>
+                    <a href="#form"  class="smooth-scroll"><button>Получить консультацию</button></a>
+                </div>
+            </div>
+        </section>
+        <section class="color">
+          <div class="container"> 
+            <img src="static/imgs/media/roadmap.webp" alt="">
+          </div>
+            <!-- <h2>Акции</h2>
+            <p>С 1 апреля 2023 года <br> Для всех клиентов фулфилмента WIN-WIN создание поставки в ЛК WB — БЕСПЛАТНО</p>
+            <button>Получить услугу</button> -->
+        </section>
+        <section class="about-us black">
+            <div class="container">
+                <div class="about-content">
+               <h2 id="services">Наши услуги</h2>
+                <div class="services-flex">
+                    <div class="services-item"><img src="static/imgs/icons/legalbus.png" alt=""><p>Легализация вывоза товара из Кыргызстана</p></div>
+                    <div class="services-item"><img src="static/imgs/icons/logo-header-2.png" alt=""><p>Введение в систему Честный Знак</p></div>
+                    <div class="services-item"><img src="static/imgs/icons/sertificat.png" alt=""><p>Сертификация товара</p></div>
+                    <div class="services-item"><img src="static/imgs/icons/documents.png" alt=""><p>Сопроводительные документы</p></div>
+                    <div class="services-item"><img src="static/imgs/icons/wherehouse.png" alt=""><p>Услуги фулфилмента</p></div>
+                </div>
+<!--                    <div class="text">-->
+<!--                        <h3>Юлия Идрисова и Александр Шевелев</h3>-->
+<!--                        <hr>-->
+<!--                        <p>Привет, мы основатели фулфилмента WIN-WIN и действующие селлеры уже более 4-х лет.</p>-->
+<!--                        <p>Качество, скорость, клиентоориентированность – три самых главных принципа нашей работы. Мы делаем все, чтобы вы могли доверить нам свой товар.</p>-->
+<!--                    </div>-->
+<!--                    <div class="photo">-->
+<!--                        <img src="static/imgs/about-us.jpg" alt="">-->
+<!--                    </div>-->
+
+                </div>
+            </div>
+        </section>
+        <section class="work-with-us black">
+          <div class="container">
+            <div class="video">
+              <h2 id="blogers">Блогеры о нас</h2>
+              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/7r8Mp540iVs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+            </div>
+          </div>
+        </section>
+        <section class="services black">
+            <div class="container">
+                <h2 id="about_us">Почему нам доверяют</h2>
+                    <div class="about">
+                        <ul>
+                            <li><img src="static/imgs/icons/export.png" alt=""><p>Многолетний опыт в сфере экспорта из Кыргызстана</p></li>
+                            <li><img src="static/imgs/icons/products.png" alt=""><p> 35000+ ед товара, введено в систему Честный Знак</p></li>
+                            <li><img src="static/imgs/icons/support.png" alt=""><p>Более 500 довольных клиентов</p></li>
+                            <li><img src="static/imgs/icons/people.png" alt=""><p>Клиенты со всего СНГ: Россия, Казахстан, Беларусь, Кыргызстан</p></li>
+                        </ul>
+                    </div>
+                <div class="button">
+                    <a href="#form"><button>Получить консультацию</button></a>
+                </div>
+            </div>
+        </section>
+        <section class="white-start">
+          <div class="container">
+            <h2 id="fulfilment">Фулфилмент полного цикла</h2>
+            <h4>От приемки товара до выгрузки на склады маркетплейсов </h4>
+              <hr>
+              <p>Мы предоставляем услуги хранения, упаковки, маркировки и доставки товара, чтобы вы могли продавать не отвлекаясь на лишние задачи.</p>
+          </div>
+        </section>
+        <section class="white">
+
+          <div class="container">
+            
+            <div class="fulfilment-container">
+              <h2 id="advantages">Наши преимущества</h2>
+              <div class="fulfilment-item">
+                <img src="static/imgs/icons/clock.png" alt="">
+                <p>48 часов от приемки товара до отправки на меркетплейсы</p>
+              </div>
+              <div class="fulfilment-item">
+                <img src="/static/imgs/icons/location.png" alt="">
+                <p>Находимся на рынке "Дордой" рядом с Вашими поставщиками и карго</p>
+              </div>
+              <div class="fulfilment-item">
+                <img src="static/imgs/icons/tick-inside-circle.png" alt="">
+                <p>Филиал в Москве обеспечивает дополнительную проверку и доставку до складов МП</p>
+              </div>
+              <div class="fulfilment-item">
+                <img src="/static/imgs/icons/sewing-machine.png" alt="">
+                <p>Дополнительные услуги для поставщиков одежды</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="white video-reviews">
+          <h2 id="review">Видео о работе фулфилмента</h2>
+          <video controls loading="lazy" src="/static/media/video/7.mp4"></video>
+        </section>
+        <section class="white second">
+          <div class="container">
+            <h2 id="fulfilment_services"> Услуги фулфилмента</h2>
+ 
+            <div class="fulfilment-container">
+              <div class="fulfilment-item">
+                <img src="static/imgs/icons/magnifier.png" alt="">
+                <p>Проверка товара на брак</p>
+              </div>
+              <div class="fulfilment-item">
+                <img src="/static/imgs/icons/icons8-ножницы-50.png" alt="">
+                <p>Чистка от торчащих ниток и пятен</p>
+              </div>
+              <div class="fulfilment-item">
+                <img src="/static/imgs/icons/igla.png" alt="">
+                <p>Перешив лейблов и составников под Ваш бренд</p>
+              </div>
+              <div class="fulfilment-item">
+                <img src="/static/imgs/icons/sewing-machine.png" alt="">
+                <p>Исправление некоторых дефектов пошива</p>
+              </div>
+              <div class="fulfilment-item">
+                <img src="static/imgs/icons/icons8-наклейка-80.png" alt="">
+                <p>Маркировка наклейками</p>
+              </div>
+              <div class="fulfilment-item">
+                <img src="/static/imgs/icons/legalbus.png" alt="">
+                <p>Доставка до складов маркетплейсов</p>
+              </div>
+              <a href="{{ url_for('calculator') }}"><button>Онлайн калькулятор</button></a>
+            </div>
+          </div>
+        </section>
+<!--        <section class="black">-->
+<!--            <div class="container">-->
+<!--                <div class="info">-->
+<!--                    <input class="info__switch" id="info__body_1" type="checkbox">-->
+<!--                    <label class="info__headline" for="info__body_1">Вы работаете только по схеме FBS? Есть же еще FBO</label>-->
+<!--                    <div class="info__body">-->
+<!--                        Мы работаем по схеме FBS и по схеме FBO для Вашего удобства. Схема FBS более выгодна нашим клиентам.-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                -->
+<!--                  <div class="info">-->
+<!--                    <input class="info__switch" id="info__body_2" type="checkbox">-->
+<!--                    <label class="info__headline" for="info__body_2">С какими маркетплейсами вы работаете?</label>-->
+<!--                    <div class="info__body">-->
+<!--                        В основном мы работаем с Ozon и Wildberries, а так же с ЯндексМаркетом и СберМаркетом.-->
+<!--                    </div>-->
+<!--                  </div>-->
+
+<!--                  <div class="info">-->
+<!--                    <input class="info__switch" id="info__body_3" type="checkbox">-->
+<!--                    <label class="info__headline" for="info__body_3">Сколько стоят ваши услуги?</label>-->
+<!--                    <div class="info__body">-->
+<!--                        Конечная цена зависит от ряда факторов, таких как: количество поставляемого товара, габариты и размер, тип упаковки, а также от срочности предоставляемых нами услуг. У нас адекватная средняя цена на рынке.-->
+<!--                    </div>-->
+<!--                  </div>-->
+
+<!--                  <div class="info">-->
+<!--                    <input class="info__switch" id="info__body_4" type="checkbox">-->
+<!--                    <label class="info__headline" for="info__body_4">Что делать, если у меня нет никакого опыта в процессе упаковки товара для маркетплейсов?</label>-->
+<!--                        <div class="info__body">-->
+<!--                            Именно для этого мы и работаем, наша задача состоит в том, чтобы избавить вас от необходимости самостоятельно решать все вопросы, связанные с упаковкой товара для маркетплейсов-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                  <div class="info">-->
+<!--                    <input class="info__switch" id="info__body_5" type="checkbox">-->
+<!--                    <label class="info__headline" for="info__body_5">Зачем мне с вами сотрудничать, если я уже сам занимаюсь упаковкой товара по стандартам маркетплейсов и поставками его на склады?</label>-->
+<!--                    <div class="info__body">-->
+<!--                        Работая с нами, вы получаете стандарты качества упаковки, выверенные нами на сотнях тысяч разнообразных товарах, уверенность за сохранность своего товара (наши склады оборудованы современными системами безопасности), и освобождаете себе много свободного времени.-->
+<!--                    </div>-->
+<!--                  </div>-->
+
+<!--                  <div class="info">-->
+<!--                    <input class="info__switch" id="info__body_6" type="checkbox">-->
+<!--                    <label class="info__headline" for="info__body_6">Чем вы отличаетесь от конкурентов?</label>-->
+<!--                    <div class="info__body">Мы сами занимаемся продажей товара на маркетплейсах, а значит отлично знаем настоящий процесс и требования упаковки товара. Ваш товар будет хранится там же, где и наш — это гарантия безопасности. Идеально выверенный и налаженный процесс отработан на товарах наших собственных брендов — у вас не будет беспокойства о том, что мы можем допустить ошибку.</div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--        </section>-->
+<section class="white">
+  <div class="wrapper">
+    <i id="left" class="fa-solid fa-angle-left"><</i>
+    <ul class="carousel">
+      <li class="card">
+        <div class="img"><img src="static/imgs/media/review1.jpg" alt="img" draggable="false"></div>
+  
+      </li>
+      <li class="card">
+        <div class="img"><img src="static/imgs/media/review2.jpg" alt="img" draggable="false"></div>
+
+      </li>
+      <li class="card">
+        <div class="img"><img src="static/imgs/media/review2.jpg" alt="img" draggable="false"></div>
+
+      </li>
+      
+    </ul>
+    <i id="right" class="fa-solid fa-angle-right">></i>
+  </div>
+
+</section>
+<!--        <section class="our-partners black">-->
+<!--            <div class="container">-->
+<!--                <h2>НАШИ ПАРТНЕРЫ</h2>-->
+
+<!--                <div class="partners-container">-->
+<!--                    <div class="partners"><img src="static/imgs/partners/Logo_-_SELLER_EXPERT.png" alt=""></div>-->
+<!--                    <div class="partners"><img src="static/imgs/partners/photo.png" alt=""></div>-->
+<!--                    <div class="partners"><img src="static/imgs/partners/tochka-s-podstrochni.png" alt=""></div>-->
+<!--                    <div class="partners"><img src="static/imgs/partners/x1_black.png" alt=""></div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </section>-->
+        <section class="contact-with-us black">
+            <div class="container">
+            
+                <div class="content" id="contacts">
+                  <div class="left-side">
+                    <div class="address details">
+                      <i class="fas fa-map-marker-alt"></i>
+                      <div class="topic">Адреса</div>
+                      <div class="text-one">Рынок "Аксуу" 2/2 (фулфилмент)</div>
+                      <div class="text-two">Рынок "Алкан" 4 ряд 35 конт.(сертификация)</div>
+                    </div>
+                    <div class="phone details">
+                      <i class="fas fa-phone-alt"></i>
+                      <div class="topic">Телефоны</div>
+                      <div class="text-one"><a href="tel:+996705130676"> +996 705 130 676</a></div>
+                      <div class="text-two"><a href="tel:+996707551312"> +996 707 551 312</a></div>
+                    </div>
+                    <div class="email details">
+                      <i class="fas fa-envelope"></i>
+                      <div class="topic">Email</div>
+                      <div class="text-one">intorgasia@gmail.com</div>
+<!--                      <div class="text-two">info.codinglab@gmail.com</div>-->
+                    </div>
+                  </div>
+                  <div class="right-side" id="form">
+                    <div class="topic-text">Отправьте заявку</div>
+                    <p>И получите бесплатную консультацию по вопросам сертификации и фулфилмента.</p>
+                  <form action="/" method="post">
+                    {{ form.hidden_tag() }}
+                    <div class="input-box">
+<!--                      <input type="text" placeholder="Введите ваше имя">-->
+                                {{ form.name() }}
+                    </div>
+                    <div class="input-box">
+<!--                      <input type="text" placeholder="Ввкдите ваш Email">-->
+                                {{ form.phone() }}
+                    </div>
+                    <div class="input-box message-box">
+<!--                      <textarea name="" id="" cols="30" rows="10" placeholder="Сообщение"></textarea>-->
+                            {{ form.message() }}
+                    </div>
+                    <div class="button">
+<!--                      <input type="button" value="Отправить" >-->
+                                            {{ form.submit() }}
+                    </div>
+                  </form>
+                </div>
+                </div>
+              </div>
+        </section>
+        
+        
+    </div>
+    <script src="static/js/swiper.js"></script>
+    <script src="static/js/script.js"></script>
+</body>
+</html>
