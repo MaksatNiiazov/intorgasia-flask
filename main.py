@@ -8,16 +8,16 @@ import telegram
 
 app = Flask(__name__)
 
-app.config['SECRET_KEY'] = 'asd51651qadsdh621fdsf51eq'
+app.config['SECRET_KEY'] = ''
 app.config['MAIL_SERVER'] = 'smtp.yandex.ru'
 app.config['MAIL_PORT'] = 465
 app.config['MAIL_USERNAME'] = 'sitew3b@yandex.ru'  
-app.config['MAIL_PASSWORD'] = 'kbofhkonytfbjxxb'
+app.config['MAIL_PASSWORD'] = ''
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 mail = Mail(app)
 
-bot = telegram.Bot(token='6176142931:AAHbdrnzjTJGDbJk4iAafobxU9iWxpysdtQ')
+bot = telegram.Bot(token='')
 
 chat_id = '1105812455'
 
