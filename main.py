@@ -3,24 +3,21 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, TextAreaField
 from wtforms.validators import DataRequired
 from flask_mail import Mail, Message
-
-import telegram
+import requests
 
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'asd51651qadsdh621fdsf51eq'
 app.config['MAIL_SERVER'] = 'smtp.yandex.ru'
 app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = 'sitew3b@yandex.ru'  
+app.config['MAIL_USERNAME'] = 'sitew3b@yandex.ru'
 app.config['MAIL_PASSWORD'] = 'kbofhkonytfbjxxb'
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 mail = Mail(app)
 
-bot = telegram.Bot(token='6176142931:AAHbdrnzjTJGDbJk4iAafobxU9iWxpysdtQ')
-
-chat_id = '1105812455'
-
+bot_token = '6176142931:AAHbdrnzjTJGDbJk4iAafobxU9iWxpysdtQ'
+chat_id = '-976199658'
 
 class ContactForm(FlaskForm):
     name = StringField('Имя', render_kw={"placeholder": "Введите Ваше имя"}, validators=[DataRequired()])
@@ -28,18 +25,26 @@ class ContactForm(FlaskForm):
     message = TextAreaField('Message', render_kw={"placeholder": "Ваше сообщение"})
     submit = SubmitField('Купить', render_kw={"value": "Отправить", "class": "submit_button"} )
 
+def send_telegram_message(chat_id, message_text):
+    try:
+        url = f'https://api.telegram.org/bot{bot_token}/sendMessage'
+        data = {'chat_id': chat_id, 'text': message_text}
+        response = requests.post(url, data=data)
+        response.raise_for_status()
+        return True
+    except requests.exceptions.RequestException as e:
+        print(f"Error sending Telegram message: {e}")
+        return False
 
 @app.route('/', methods=['GET', 'POST'])
-async def index():
+def index():
     form = ContactForm()
     if form.validate_on_submit():
-        if not form.message:
-            form.message.data = ''
-        message_text = f"""{form.name.data} ({form.phone.data})
-{form.message.data}"""
-        await bot.send_message(chat_id=chat_id, text=message_text)
-        msg = Message('New message from your website', sender='sitew3b@yandex.ru',
-                      recipients=['sitew3b@yandex.ru'])
+        if not form.message.data:
+            form.message.data = 'Без сообщения.'
+        message_text = f"{form.name.data} ({form.phone.data})\nСообщение:\n{form.message.data}"
+        send_telegram_message(chat_id, message_text)
+        msg = Message('New message from your website', sender='sitew3b@yandex.ru', recipients=['sitew3b@yandex.ru',   'niyazov37@gmail.com'])
         msg.body = message_text
 
         try:
@@ -50,10 +55,10 @@ async def index():
         return redirect(url_for('index'))
     return render_template('index.html', form=form)
 
+@app.route('/calculator', methods=['GET', 'POST'])
+def calculator():
+    form = ContactForm()
+    return render_template('calculator.html', form=form)
 
-@app.route('/calculator', methods=['GET'])
-async def calculator():
-    return render_template('calculator.html', form=ContactForm())
 if __name__ == '__main__':
-    app.run(debug=True)
-
+    app.run(debug=False)
