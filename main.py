@@ -3,20 +3,21 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, TextAreaField
 from wtforms.validators import DataRequired
 from flask_mail import Mail, Message
+import config
 import requests
 
 app = Flask(__name__)
 
-app.config['SECRET_KEY'] = 'asd51651qadsdh621fdsf51eq'
+app.config['SECRET_KEY'] = config.SECRET_KEY
 app.config['MAIL_SERVER'] = 'smtp.yandex.ru'
 app.config['MAIL_PORT'] = 465
 app.config['MAIL_USERNAME'] = 'sitew3b@yandex.ru'
-app.config['MAIL_PASSWORD'] = 'kbofhkonytfbjxxb'
+app.config['MAIL_PASSWORD'] = config.MAIL_PASSWORD
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 mail = Mail(app)
 
-bot_token = '6176142931:AAHbdrnzjTJGDbJk4iAafobxU9iWxpysdtQ'
+bot_token = config.TOKEN
 chat_id = '-976199658'
 
 class ContactForm(FlaskForm):
