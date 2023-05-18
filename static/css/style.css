@@ -5,22 +5,39 @@ body{
 
     font-family: "Poppins", sans-serif;
     color: #F0F0F0;
-    background-image: url('../imgs/background.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
     min-width: 100%;
     min-height: 100vh;
+      opacity: 0;
+      background-image: none;
+      transition: opacity 0.5s ease-in-out, background-image 0.5s ease-in-out;;
+}
+body.loaded {
+  background-image: url('../imgs/background.jpg');
 
-  
+  opacity: 1;
+}
+button{
+  display: block;
+  margin: 25px auto;
+  font-size: 15px;
+  font-weight: bold;
+  height: 50px;
+  width: 200px;
+  color: #ffffff;
+  background-color: #FFA717;
+  border-radius: 25px;
+  text-align: center;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.66); */
+
 }
 a{
   text-decoration: none;
 }
-button{
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.66);
-}
+
 button:hover{
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
 }
@@ -35,7 +52,7 @@ width: 100%;
 .container {
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 2px auto;
     padding: 0 20px;
 }
 header{
@@ -161,23 +178,12 @@ nav li{
   line-height: 25px;
   font-weight: lighter; 
 }
-.title button{
-  margin: 46px 0 66px;
-  color: #181513;
-  font-size: 15px;
-  font-weight: bold;
-  height: 50px;
-  width: 200px;
-  background-color: #FFA717;
-  border-radius: 25px;
-  border: none;
-  
-}
+
 
 .color{
   background-color: #FFA717;
   color: #F0F1F8;
-  padding: 46px 0 20px;
+  padding: 20px 0 20px;
   text-align: center;
 }
 .color h2{
@@ -185,11 +191,10 @@ nav li{
 }
 .color p{
   color: #fff;
-  margin-top: 40px;
   font-size: 26px;
   font-weight: bold;
 }
-.color button{
+/* .color button{
   color: #FFA717;
   border: none;
   margin: 46px 0;
@@ -200,11 +205,11 @@ nav li{
   width: 200px;
   background-color: rgb(16, 198, 253);
   border-radius: 25px;
-}
+} */
 
 .black{
   background-color: #181513;
-  padding: 20px 0;
+  padding: 22px 0;
 }
 .about{
   margin: 0 auto;
@@ -216,11 +221,7 @@ padding: 20px 0;
 .about li{
   display: flex;
   margin-top: 10px;
-}
-.about li img{
-  display: block;
-  width: 50px;
-  height: 50px;
+  padding: 10px
 }
 .about li img{
   display: block;
@@ -248,13 +249,13 @@ justify-content: center;
   text-align: start;
   margin-left: 0;
 }
-.about-us .about-content div{
+/* .about-us .about-content div{
   margin: 10px;
   max-width: 500px;
   min-width: 100px;
   align-items: center;
   align-self: center;
-}
+} */
 .about-us p{
   margin: 5px 0;
   align-items: center;
@@ -283,7 +284,7 @@ justify-content: center;
   margin-left: 0%;
  
 }
-.about button{
+/* .about button{
   border: black 1px solid;
   margin: 50px 0;
   font-size: 15px;
@@ -292,7 +293,7 @@ justify-content: center;
   width: 200px;
   background-color: transparent;
   border-radius: 25px;
-}
+} */
 .video{
   margin: 0 auto;
   display: flex;
@@ -306,7 +307,7 @@ justify-content: center;
   margin-bottom: 40px;
 }
 
-  .info {
+  /* .info {
     position: relative;
     display: flex;
     flex-flow: column nowrap;
@@ -375,23 +376,13 @@ justify-content: center;
     bottom: 0; left: 0;
     height: 2.366em; width: 100%;
     background-image: linear-gradient(#0000, #eee4ff);
-  }
+  } */
 
 
 .services h2{
   text-align: center;
 }
-.services button{
-  display: block;
-  margin: 25px auto;
-  font-size: 15px;
-  font-weight: bold;
-  height: 50px;
-  width: 200px;
-  color: #101010;
-  background-color: #FFA717;
-  border-radius: 25px;
-}
+
   .services-flex {
     display: flex;
     flex-wrap: wrap;
@@ -468,23 +459,13 @@ justify-content: center;
     font-size: 24px;
     
   }
-.second button{
-  display: block;
-  margin: 40px auto 0;
-  font-size: 15px;
-  font-weight: bold;
-  height: 50px;
-  width: 200px;
-  color: #101010;
-  background-color: #FFA717;
-  border-radius: 25px;
-}
+
 
 .fulfilment-item{
   display: flex;
   align-items: center;
   max-width: 500px;
-  margin: 0 auto;
+  margin: 30px auto;
 
 }
 .fulfilment-item p{
@@ -495,7 +476,7 @@ justify-content: center;
 }
 .fulfilment-item img{
   width: 50px;
-  margin-top: 15px;
+
 }
 
   .our-partners h2{
@@ -812,5 +793,19 @@ html {
 
  a[href^="tel:"] {
   color: white;
-
   }
+
+#anchor {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: #FFA717;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  border-radius: 10px;
+}
