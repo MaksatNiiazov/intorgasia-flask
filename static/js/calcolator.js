@@ -1,68 +1,64 @@
-  // Находим элементы услуг и их содержимое
-  const services = document.getElementById("services");
-  const serviceElems = services.querySelectorAll(".service");
-  
-  // Находим элементы для вывода итоговых результатов
-  const totalElement = document.getElementById("total");
-  const averageElement = document.getElementById("average");
-  const countElement = document.getElementById("count");
-  
-  // Находим элементы кнопок увеличения и уменьшения количества услуг
-  const decrementButtons = services.querySelectorAll(".decrement");
-  const incrementButtons = services.querySelectorAll(".increment");
-  
-  let total = 0;
-  let count = 0;
-  
-  function updateTotals() {
-    totalElement.textContent = `Общая стоимость: ${total}р`;
-    const average = count > 0 ? total / count : 0;
-    averageElement.textContent = `Средняя стоимость: ${average}р`;
-    countElement.textContent = `Общее количество услуг: ${count}`;
+const services = document.getElementById("services");
+const decrementButtons = services.querySelectorAll(".decrement");
+const incrementButtons = services.querySelectorAll(".increment");
+const totalElement = document.getElementById("total");
+const averageElement = document.getElementById("average");
+const countElement = document.getElementById("count");
+
+let total = 0;
+let count = 0;
+let mainServiceValue = 0;
+
+function updateTotals() {
+  totalElement.textContent = `Общая стоимость: ${total}р`;
+  const pricePerUnit = mainServiceValue > 0 ? total / mainServiceValue : 0;
+  averageElement.textContent = `Цена за единицу: ${pricePerUnit.toFixed(2)}р`;
+  // countElement.textContent = `Общее количество услуг: ${count}`;
+}
+
+services.addEventListener("click", event => {
+  const { target } = event;
+  const input = target.parentNode.querySelector("input");
+  const value = parseInt(input.value);
+
+  if (target.classList.contains("decrement") && value > 0) {
+    input.value = value - 1;
+  } else if (target.classList.contains("increment")) {
+    input.value = value + 1;
   }
-  
-  decrementButtons.forEach(button => {
-    button.addEventListener("click", event => {
-      const input = event.target.parentNode.querySelector("input");
-      const value = parseInt(input.value);
-      if (value > 0) {
-        input.value = value - 1;
-        const serviceElem = event.target.closest(".service");
-        const price = parseInt(serviceElem.querySelector(".service-price").textContent);
-        total -= price;
-        count -= 1;
-        updateTotals();
-      }
-    });
-  });
-  
-  incrementButtons.forEach(button => {
-    button.addEventListener("click", event => {
-      const input = event.target.parentNode.querySelector("input");
-      const value = parseInt(input.value);
-      input.value = value + 1;
-      const serviceElem = event.target.closest(".service");
-      const price = parseInt(serviceElem.querySelector(".service-price").textContent);
-      total += price;
-      count += 1;
-      updateTotals();
-    });
-  });
-  
-  serviceElems.forEach(serviceElem => {
+
+  updateValues();
+});
+
+services.addEventListener("input", updateValues);
+
+function updateValues() {
+  total = 0;
+  count = 0;
+  mainServiceValue = 0;
+
+  const serviceElements = services.querySelectorAll(".service");
+
+  serviceElements.forEach(serviceElem => {
     const input = serviceElem.querySelector("input");
-    input.addEventListener("input", event => {
-      const value = parseInt(input.value);
-      if (value >= 0) {
-        const price = parseInt(serviceElem.querySelector(".service-price").textContent);
-        const prevValue = parseInt(input.getAttribute("data-prev-value"));
-        total -= price * (prevValue || 0);
-        total += price * value;
-        count += value - (prevValue || 0);
-        input.setAttribute("data-prev-value", value);
-        updateTotals();
-      } else {
-        input.value = input.getAttribute("data-prev-value") || 0;
-      }
-    });
+    const { textContent: price } = serviceElem.querySelector(".service-price");
+    let value = parseInt(input.value);
+
+    if (isNaN(value) || value < 0) {
+      value = 0;
+      input.value = "0";
+    }
+
+    total += parseInt(price) * value;
+    count += value;
+
+    if (serviceElem.id === "main") {
+      mainServiceValue = value; // Store the value from the input field with id "main"
+    }
   });
+
+  const pricePerUnit = (mainServiceValue > 0 ? total / mainServiceValue : 0).toFixed(2);
+  averageElement.textContent = `Цена за единицу товара: ${pricePerUnit}р`;
+
+  updateTotals();
+}
