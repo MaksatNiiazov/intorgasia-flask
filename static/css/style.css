@@ -426,7 +426,7 @@ justify-content: center;
 
   .white{
     color: #181513;
-    background-color: #ffffff;
+    background-color: #e7e7e7;
     padding: 8px 0 14px;
   }
   .white h2{
@@ -804,13 +804,13 @@ html {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   background-color: #FFA717;
   color: #fff;
   text-align: center;
-  line-height: 50px;
+  line-height: 45px;
   cursor: pointer;
   border-radius: 10px;
-  font-size: 30px;
+  font-size: 25px;
 }
