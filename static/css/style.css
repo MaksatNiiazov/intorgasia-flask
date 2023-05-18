@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
 body{
-
+  caret-color: transparent;
 
     font-family: "Poppins", sans-serif;
     color: #F0F0F0;
@@ -14,6 +14,9 @@ body{
       opacity: 0;
       background-image: none;
       transition: opacity 0.5s ease-in-out, background-image 0.5s ease-in-out;;
+}
+input, textarea, select, textarea{
+  caret-color: #000;
 }
 body.loaded {
   background-image: url('../imgs/background.jpg');
@@ -808,4 +811,5 @@ html {
   line-height: 40px;
   cursor: pointer;
   border-radius: 10px;
+  font-size: 20px;
 }
