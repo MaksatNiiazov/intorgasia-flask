@@ -437,6 +437,7 @@
                       <i class="fas fa-map-marker-alt"></i>
                       <div class="topic">Адреса</div>
                       <div class="text-one">Рынок "Аксуу" 2/2 (фулфилмент)</div>
+                      <br>
                       <div class="text-two">Рынок "Алкан" 4 ряд 35 конт.(сертификация)</div>
                     </div>
                     <div class="phone details">
@@ -449,7 +450,6 @@
                       <i class="fas fa-envelope"></i>
                       <div class="topic">Email</div>
                       <div class="text-one">intorgasia@gmail.com</div>
-<!--                      <div class="text-two">info.codinglab@gmail.com</div>-->
                     </div>
                   </div>
                   <div class="right-side" id="form">
@@ -458,20 +458,16 @@
                   <form action="/" method="post">
                     {{ form.hidden_tag() }}
                     <div class="input-box">
-<!--                      <input type="text" placeholder="Введите ваше имя">-->
-                                {{ form.name() }}
+                      {{ form.name() }}
                     </div>
                     <div class="input-box">
-<!--                      <input type="text" placeholder="Ввкдите ваш Email">-->
-                                {{ form.phone() }}
+                      {{ form.phone() }}
                     </div>
                     <div class="input-box message-box">
-<!--                      <textarea name="" id="" cols="30" rows="10" placeholder="Сообщение"></textarea>-->
-                            {{ form.message() }}
+                      {{ form.message() }}
                     </div>
                     <div class="button">
-<!--                      <input type="button" value="Отправить" >-->
-                                            {{ form.submit() }}
+                      {{ form.submit() }}
                     </div>
                   </form>
                 </div>
