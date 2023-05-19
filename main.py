@@ -37,6 +37,17 @@ def send_telegram_message(chat_id, message_text):
         print(f"Error sending Telegram message: {e}")
         return False
 
+def send_email(subject, sender, recipients, body):
+    msg = Message(subject, sender=sender, recipients=recipients)
+    msg.body = body
+
+    try:
+        mail.send(msg)
+        return True
+    except Exception as e:
+        print(str(e))
+        return False
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     form = ContactForm()
@@ -45,14 +56,11 @@ def index():
             form.message.data = 'Без сообщения.'
         message_text = f"{form.name.data} ({form.phone.data})\nСообщение:\n{form.message.data}"
         send_telegram_message(chat_id, message_text)
-        msg = Message('New message from your website', sender='sitew3b@yandex.ru', recipients=['sitew3b@yandex.ru',   'niyazov37@gmail.com'])
-        msg.body = message_text
-
-        try:
-            mail.send(msg)
-        except Exception as e:
-            print(str(e))
-        flash('Заказ оформлен!', 'success')
+        recipients = ['niyazov37@gmail.com']
+        if send_email('New message from your website', 'sitew3b@yandex.ru', recipients, message_text):
+            flash('Заказ оформлен!', 'success')
+        else:
+            flash('Ошибка при отправке заказа.', 'error')
         return redirect(url_for('index'))
     return render_template('index.html', form=form)
 

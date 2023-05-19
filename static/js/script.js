@@ -7,9 +7,11 @@ document.addEventListener("DOMContentLoaded", function() {
     var scrollPercent = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight) * 100;
 
     if (scrollPercent >= 10) {
-      anchor.style.display = 'block';
+      anchor.style.opacity = '1';
+      anchor.style.pointerEvents  = 'all';
     } else {
-      anchor.style.display = 'none';
+      anchor.style.opacity = '0';
+      anchor.style.pointerEvents  = 'none';
     }
   });
 
@@ -23,7 +25,14 @@ document.addEventListener("DOMContentLoaded", function() {
   var icons = document.querySelectorAll('.icon');
 
   openBtn.addEventListener('click', function() {
-    popup.style.display = (popup.style.display === 'block') ? 'none' : 'block';
+    if (popup.style.opacity === '1') {
+      popup.style.opacity = '0';
+      popup.style.pointerEvents  = 'none';
+    
+    } else {
+      popup.style.opacity = '1';
+      popup.style.pointerEvents  = 'all';
+    }
   });
 
   anchor.addEventListener('click', function() {
