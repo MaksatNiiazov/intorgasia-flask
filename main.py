@@ -9,12 +9,14 @@ import requests
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = config.SECRET_KEY
-app.config['MAIL_SERVER'] = 'smtp.yandex.ru'
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = 'sitew3b@yandex.ru'
+app.config['MAIL_USERNAME'] = 'mn25260518@gmail.com'
 app.config['MAIL_PASSWORD'] = config.MAIL_PASSWORD
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
+
+
 mail = Mail(app)
 
 bot_token = config.TOKEN
@@ -56,8 +58,8 @@ def index():
             form.message.data = 'Без сообщения.'
         message_text = f"{form.name.data} ({form.phone.data})\nСообщение:\n{form.message.data}"
         send_telegram_message(chat_id, message_text)
-        recipients = ['niyazov37@gmail.com']
-        if send_email('New message from your website', 'sitew3b@yandex.ru', recipients, message_text):
+        recipients = ['mn25260518@gmail.com', 'intorgasia@gmail.com', 'niyazov37@gmail.com']
+        if send_email('Заявка', 'mn25260518@gmail.com', recipients, message_text):
             flash('Заказ оформлен!', 'success')
         else:
             flash('Ошибка при отправке заказа.', 'error')
