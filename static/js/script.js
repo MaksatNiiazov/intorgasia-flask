@@ -5,13 +5,13 @@ document.addEventListener("DOMContentLoaded", function() {
   window.addEventListener('scroll', function() {
     var anchor = document.getElementById('anchor');
     var scrollPercent = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight) * 100;
-
-    if (scrollPercent >= 10) {
-      anchor.style.opacity = '1';
-      anchor.style.pointerEvents  = 'all';
+  
+    if (scrollPercent >= 10 && scrollPercent < 95) {
+      anchor.style.opacity = '0.8';
+      anchor.style.pointerEvents = 'all';
     } else {
       anchor.style.opacity = '0';
-      anchor.style.pointerEvents  = 'none';
+      anchor.style.pointerEvents = 'none';
     }
   });
 
@@ -45,3 +45,19 @@ document.addEventListener("DOMContentLoaded", function() {
       // Например, переход на соответствующую страницу
     });
   }
+
+  // Получаем элемент с идентификатором "open-btn"
+var openBtn = document.getElementById("open-btn");
+
+// Функция для добавления анимации тряски
+function shakeElement() {
+  openBtn.classList.add("shake");
+
+  // Удаление класса "shake" после окончания анимации
+  setTimeout(function() {
+    openBtn.classList.remove("shake");
+  }, 1000); // Длительность анимации в миллисекундах
+}
+
+// Запускаем функцию для тряски каждые 5 секунд
+setInterval(shakeElement, 5000);

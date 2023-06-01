@@ -295,3 +295,14 @@ background-color: #ffffff32;
 a{
   color: #f2f2f2;
 }
+
+.phone a{
+  text-decoration: underline;
+}
+.phone p{
+  color: #aaa8a8;
+  font-size: 12px;
+}
+.phone hr{
+  width: 70%;
+}

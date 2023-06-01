@@ -58,7 +58,7 @@ def index():
             form.message.data = 'Без сообщения.'
         message_text = f"{form.name.data} ({form.phone.data})\nСообщение:\n{form.message.data}"
         send_telegram_message(chat_id, message_text)
-        recipients = ['mn25260518@gmail.com', 'intorgasia@gmail.com', 'niyazov37@gmail.com']
+        recipients = ['mn25260518@gmail.com', 'intorgasia@gmail.com']
         if send_email('Заявка', 'mn25260518@gmail.com', recipients, message_text):
             flash('Заказ оформлен!', 'success')
         else:
