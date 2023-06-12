@@ -75,7 +75,6 @@ header{
 
 .media-links{
   display: flex;
-  filter: invert(1);
   
 }
 .media-links a{
@@ -387,7 +386,6 @@ justify-content: center;
 .services h2{
   text-align: center;
 }
-
   .services-flex {
     display: flex;
     flex-wrap: wrap;
@@ -396,11 +394,11 @@ justify-content: center;
     padding: 0 20px;
     max-width: 600px;
     margin: 0 auto;
-  }
-  
+  }  
   .services-item {
     display: flex;
     justify-content: flex-start;
+    align-items: center;
     flex-basis: 80%;
     margin-bottom: 10px;
     padding: 10px;
@@ -621,6 +619,14 @@ justify-content: center;
   transform: translateY(-3px);
 }
 
+.media-links2{
+  display: none;
+}
+.media-links2 img{
+
+  width: 40px;
+  margin: 0 15px;
+}
 
   @media (max-width: 950px) {
     .container{
@@ -660,6 +666,9 @@ justify-content: center;
 
 
   @media (max-width: 767px) {
+    .media-links2{
+      display: flex;
+    }
     .top-contacts{
       display: none;
     }
@@ -869,8 +878,8 @@ html {
   text-align: center;
   margin: 5px;
   filter: invert(1);
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
 }
 #popup .icon:first-child {
   display: inline;
@@ -878,8 +887,8 @@ html {
   text-align: center;
   margin: 5px;
   filter: invert(1);
-  width: 25px;
-  height: 25px;
+  width: 40px;
+  height: 40px;
 }
 
 .pop-flex{
@@ -913,4 +922,80 @@ html {
 
 .shake {
   animation: shake 1s;
+}
+
+.business-tours {
+  padding: 20px;
+}
+
+.business-tours h2,
+.business-tours h3 {
+  text-align: center;
+  color: white;
+}
+
+.business-tours p,
+.business-tours ul {
+  margin: 0 auto;
+  max-width: 500px;
+  color: white;
+  margin-bottom: 10px;
+  text-align: left;
+  list-style-type: disc;
+
+}
+
+.business-tours .image-container {
+  margin: 10px auto;
+  max-width: 700px;
+}
+
+.business-tours .image-container img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  display: block;
+  margin-top: 10px auto;
+}
+
+.business-tours .tour-prices ul,
+.business-tours .disclaimer {
+  color: white;
+  margin-top: 10px;
+  list-style-type: disc;
+
+}
+
+.business-tours .request-button {
+  background-color: #FFA717;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.tour-inclusions li{
+display: flex;
+margin-bottom: 20px;
+align-items: center;
+}
+.tour-inclusions li:last-child{
+  display: flex;
+  margin-bottom: 40px;
+  align-items: center;
+  }
+  
+.tour-inclusions img{
+width: 50px;
+height: 50px;
+filter: invert(1);
+margin-right: 10px;
+  }
+
+.disclaimer{
+  text-align: center;
+  margin: 0 auto;
+}
+.text-one a{
+  color: white;
 }
