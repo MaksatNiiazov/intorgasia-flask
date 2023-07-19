@@ -24,7 +24,7 @@ chat_id = '-976199658'
 
 class ContactForm(FlaskForm):
     name = StringField('Имя', render_kw={"placeholder": "Введите Ваше имя"}, validators=[DataRequired()])
-    phone = StringField('Phone', render_kw={"placeholder": "Ваш номер телефона"}, validators=[DataRequired()])
+    phone = StringField('Phone', render_kw={"placeholder": "Ваш номер What'sApp"}, validators=[DataRequired()])
     message = TextAreaField('Message', render_kw={"placeholder": "По какому вопросу Вы хотите получить консультацию?"})
     submit = SubmitField('Купить', render_kw={"value": "Отправить", "class": "submit_button"} )
 
